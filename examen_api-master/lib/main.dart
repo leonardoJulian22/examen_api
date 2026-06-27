@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'screens/user_list_screen.dart';
+import 'screens/main_menu_screen.dart'; // <-- 1. Importamos tu nuevo menú aquí
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key}); // <-- 2. Esto arregla la advertencia de la línea 7
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const UserListScreen(),
+      home: const MainMenuScreen(), // <-- 3. ¡Aquí conectamos el menú con las dos pestañas!
     );
   }
 }
